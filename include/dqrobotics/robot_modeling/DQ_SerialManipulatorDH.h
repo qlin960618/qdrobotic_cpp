@@ -45,6 +45,11 @@ public:
     [[deprecated("Use ? instead.")]] VectorXd get_alphas() const;
     [[deprecated("Use ? instead.")]] VectorXd get_types() const;
 
+    // Experimental getter ans setter
+    [[deprecated("Experimental Use ? instead.")]] void set_dh_matrix(const MatrixXd& dh_matrix);
+    [[deprecated("Experimental Use ? instead.")]] MatrixXd get_dh_matrix();
+
+
     DQ_SerialManipulatorDH()=delete;
     DQ_SerialManipulatorDH(const MatrixXd& dh_matrix);
 

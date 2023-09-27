@@ -190,6 +190,38 @@ VectorXd DQ_SerialManipulatorDH::get_types() const
     return dh_matrix_.row(4);
 }
 
+
+/**
+ * @brief This method returns the Matrix dh_matrix_.
+ *
+ * @returns the Matrix dh_matrix_.
+ *
+ */
+MatrixXd DQ_SerialManipulatorDH::get_dh_matrix()
+{
+    return dh_matrix_;
+}
+
+/**
+ * @brief This method set the Matrix dh_matrix_, with check to ensure matrix are same in dimensions.
+ *
+ * @returns None.
+ *
+ */
+void DQ_SerialManipulatorDH::set_dh_matrix(const MatrixXd& dh_matrix)
+{
+    if(dim_configuration_space_!=dh_matrix.cols())
+    {
+        throw std::range_error("Bad set_dh_matrix(dh_matrix) call: dh_matrix should match existing configuration dimension");
+    }
+    if(dh_matrix.rows() != 5)
+    {
+        throw(std::range_error("Bad set_dh_matrix(dh_matrix) call: dh_matrix should be 5xn"));
+    }
+    dh_matrix_ = dh_matrix;
+}
+
+
 /**
  * @brief This method calculates the forward kinematic model and returns the dual quaternion
  *        corresponding to the last joint (the displacements due to the base and the effector

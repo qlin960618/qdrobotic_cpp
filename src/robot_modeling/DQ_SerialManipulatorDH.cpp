@@ -197,7 +197,7 @@ VectorXd DQ_SerialManipulatorDH::get_types() const
  * @returns the Matrix dh_matrix_.
  *
  */
-MatrixXd DQ_SerialManipulatorDH::get_dh_matrix()
+MatrixXd DQ_SerialManipulatorDH::get_dh_matrix() const
 {
     return dh_matrix_;
 }

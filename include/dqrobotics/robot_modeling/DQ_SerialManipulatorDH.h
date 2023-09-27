@@ -47,7 +47,7 @@ public:
 
     // Experimental getter ans setter
     [[deprecated("Experimental Use ? instead.")]] void set_dh_matrix(const MatrixXd& dh_matrix);
-    [[deprecated("Experimental Use ? instead.")]] MatrixXd get_dh_matrix();
+    [[deprecated("Experimental Use ? instead.")]] MatrixXd get_dh_matrix() const;
 
 
     DQ_SerialManipulatorDH()=delete;
